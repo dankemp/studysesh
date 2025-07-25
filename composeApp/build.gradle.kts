@@ -37,6 +37,8 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation("androidx.navigation:navigation-compose:2.7.7")
+            implementation("androidx.compose.material3:material3:1.2.1")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -47,6 +49,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation("androidx.navigation:navigation-compose:2.7.7")
+            implementation("androidx.compose.material3:material3:1.2.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -86,6 +90,7 @@ android {
 }
 
 dependencies {
+
     debugImplementation(compose.uiTooling)
 }
 
