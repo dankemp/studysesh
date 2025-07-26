@@ -19,12 +19,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.GenericShape
 import androidx.compose.ui.graphics.Shape
-//import androidx.compose.ui.geometry.Size
-//import kotlin.math.sqrt
 import studysesh.composeapp.generated.resources.Res
 import studysesh.composeapp.generated.resources.compose_multiplatform
-
-
 
 
 val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
@@ -35,9 +31,6 @@ val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
     lineTo(0f, height) // Bottom left point
     close()
 }
-
-
-
 @Composable
 @Preview
 fun App() {
@@ -56,20 +49,17 @@ fun App() {
             ){
                 Button(onClick = { showContent = !showContent }) {
                     Text("Click me!")
-            }
+                }
 
-
-            Button(
-                onClick = {showContent = !showContent},
-                shape = EquilateralTriangleShape,
-                modifier = Modifier
-                    .align(Alignment.TopEnd as Alignment.Vertical)
-                    .size(40.dp),
-                contentPadding = PaddingValues(0.dp)
-            ){
-
-            }
-
+                Button(
+                    onClick = {showContent = !showContent},
+                    shape = EquilateralTriangleShape,
+                    modifier = Modifier
+                        .align(Alignment.TopEnd as Alignment.Vertical)
+                        .size(40.dp),
+                    contentPadding = PaddingValues(0.dp)
+                ){
+                }
             }
             AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
