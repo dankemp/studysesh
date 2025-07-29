@@ -36,42 +36,42 @@ val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
 fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
-        Column(
-            modifier = Modifier
-                .safeContentPadding()
-                .fillMaxSize()
-                .padding(start = 32.dp),
-            horizontalAlignment = Alignment.Start,
-        ) {
+        Box(modifier = Modifier.fillMaxSize()) {
             Row(
-                modifier = Modifier.padding(vertical = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ){
-                Button(onClick = { showContent = !showContent }) {
+                modifier = Modifier
+                    .safeContentPadding()
+                    .fillMaxSize()
+                    .padding(start = 32.dp)
+            ) {
+                Button(
+                    onClick = { showContent = !showContent },
+                    modifier = Modifier.padding(vertical = 16.dp)
+                ) {
                     Text("Click me!")
                 }
 
+                Spacer(modifier = Modifier.weight(1f))  // This pushes the triangle to the end
+
                 Button(
-                    onClick = {showContent = !showContent},
+                    onClick = { showContent = !showContent },
                     shape = EquilateralTriangleShape,
                     modifier = Modifier
-                        .align(Alignment.TopEnd as Alignment.Vertical)
+                        .padding(start = 32.dp, end = 32.dp, top = 16.dp, bottom = 16.dp)
                         .size(40.dp),
                     contentPadding = PaddingValues(0.dp)
-                ){
-                }
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.Start
-                ) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
+                ) { }
+
+                AnimatedVisibility(showContent) {
+                    val greeting = remember { Greeting().greet() }
+                    Column(
+                        Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.Start
+                    ) {
+                        Image(painterResource(Res.drawable.compose_multiplatform), null)
+                        Text("Compose: $greeting")
+                    }
                 }
             }
         }
     }
 }
-
-
