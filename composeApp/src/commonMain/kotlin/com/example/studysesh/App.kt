@@ -1,12 +1,7 @@
 package com.example.studysesh
 
 import AppRoot
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import com.example.studysesh.presentation.navigation.Navigator
-import com.example.studysesh.presentation.ui.AppRoot
-import com.example.studysesh.presentation.
-
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -21,7 +16,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.GenericShape
 import androidx.compose.ui.graphics.Shape
@@ -37,12 +31,6 @@ val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
     lineTo(0f, height) // Bottom left point
     close()
 }
-
-
-
-
-
-
 
 @Composable
 fun App() {

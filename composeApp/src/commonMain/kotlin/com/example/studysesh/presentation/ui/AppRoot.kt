@@ -10,10 +10,6 @@ import com.example.studysesh.presentation.ui.PageHost
 import com.example.studysesh.presentation.ui.SettingsScreen
 
 
-
-
-
-
 @Composable
 fun AppRoot(navigator: Navigator) {
     val LocalNavigator = staticCompositionLocalOf<Navigator> {
