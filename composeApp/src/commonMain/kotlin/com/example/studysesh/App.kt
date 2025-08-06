@@ -2,7 +2,6 @@ package com.example.studysesh
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,6 +33,8 @@ val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
 @Composable
 @Preview
 fun App() {
+    val navigator = remember { Navigator() }
+    AppRoot(navigator)
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Box(modifier = Modifier.fillMaxSize()) {
