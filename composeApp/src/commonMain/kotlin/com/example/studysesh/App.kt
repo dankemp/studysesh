@@ -1,5 +1,12 @@
 package com.example.studysesh
 
+import AppRoot
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import com.example.studysesh.presentation.navigation.Navigator
+import com.example.studysesh.presentation.ui.AppRoot
+import com.example.studysesh.presentation.
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -30,8 +37,14 @@ val EquilateralTriangleShape: Shape = GenericShape { size, _ ->
     lineTo(0f, height) // Bottom left point
     close()
 }
+
+
+
+
+
+
+
 @Composable
-@Preview
 fun App() {
     val navigator = remember { Navigator() }
     AppRoot(navigator)

@@ -2,14 +2,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import com.example.studysesh.presentation.navigation.LocalNavigator
 import com.example.studysesh.presentation.navigation.Navigator
 import com.example.studysesh.presentation.navigation.Route
-import com.example.studysesh.presentation.ui.PageScreen
-import com.example.studysesh.presentation.ui.Page1Content
-import com.example.studysesh.presentation.ui.Page2
+import com.example.studysesh.presentation.ui.PageHost
 import com.example.studysesh.presentation.ui.SettingsScreen
-import androidx.compose.runtime.staticCompositionLocalOf
+
+
 
 
 
@@ -30,12 +30,4 @@ fun AppRoot(navigator: Navigator) {
     }
 }
 
-@Composable
-fun PageHost(index: Int) {
-    when (index) {
-        1 -> PageScreen(index = 1) { Page1() }
-        2 -> PageScreen(index = 2) { Page2() }
-        3 -> PageScreen(index = 3) { Page3() }
-        4 -> PageScreen(index = 4) { Page4() }
-    }
-}
+

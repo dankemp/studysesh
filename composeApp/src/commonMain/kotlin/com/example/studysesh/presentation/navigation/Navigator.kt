@@ -1,3 +1,5 @@
+package com.example.studysesh.presentation.navigation
+
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -7,24 +9,17 @@ class Navigator(start: Route = Route.Page(1)) {
     val route: StateFlow<Route> = _route.asStateFlow()
 
     fun goTo(route: Route) { _route.value = route }
-
     fun nextPage() {
         val current = _route.value
         if (current is Route.Page && current.index < 4) {
             _route.value = Route.Page(current.index + 1)
         }
     }
-
     fun prevPage() {
         val current = _route.value
         if (current is Route.Page && current.index > 1) {
             _route.value = Route.Page(current.index - 1)
         }
     }
-
-    fun openSettings() = goTo(Route.Settings)
-
-    fun backFromSettings() {
-        if (_route.value is Route.Settings) _route.value = Route.Page(1)
-    }
+    fun openSettings() { _route.value = Route.Settings }
 }
