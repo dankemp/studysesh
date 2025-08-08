@@ -1,6 +1,6 @@
 package com.example.studysesh
 
-import AppRoot
+import com.example.studysesh.presentation.ui.AppRoot
 import com.example.studysesh.presentation.navigation.Navigator
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image

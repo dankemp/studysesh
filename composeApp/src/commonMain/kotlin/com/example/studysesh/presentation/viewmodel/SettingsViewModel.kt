@@ -1,3 +1,5 @@
+/*
+
 class SettingsViewModel(private val appSettings: AppSettings) : ViewModel() {
     private val _state = MutableStateFlow(SettingsState())
     val state: StateFlow<SettingsState> = _state
@@ -16,3 +18,4 @@ class SettingsViewModel(private val appSettings: AppSettings) : ViewModel() {
 }
 
 data class SettingsState(val darkMode: Boolean = false)
+*/
